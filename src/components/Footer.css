@@ -1,0 +1,235 @@
+.site-footer {
+    padding: 0 4rem 4rem;
+    background: var(--bg);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    background: #ffffff;
+    border-radius: 4px 4px 32px 32px;
+    /* Adjusting radius to look settled */
+    border-radius: 32px;
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Bottom align items */
+    color: #000;
+    min-height: 200px;
+    position: relative;
+}
+
+/* Left Section */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    letter-spacing: -2px;
+    font-weight: 300;
+}
+
+.footer-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+    background: #f5f5f5;
+    border-color: #000;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.3;
+}
+
+/* Center Section */
+.footer-center {
+    text-align: center;
+    position: absolute;
+    left: 42%;
+    transform: translateX(-50%);
+}
+
+.footer-center h2 {
+    font-size: 2.9rem;
+    font-weight: 200;
+    line-height: 1.1;
+    color: #000;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Right Section */
+.footer-right {
+    display: flex;
+    gap: 3rem;
+    text-align: left;
+}
+
+.nav-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nav-column a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-column a:hover {
+    color: #000;
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.contact-email {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.consultation-btn {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 100px;
+    padding: 0.4rem 0.6rem 0.4rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.btn-circle {
+    width: 32px;
+    height: 32px;
+    background: #ff2ea6;
+    /* Pink color from reference */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.consultation-btn:hover {
+    border-color: #ff2ea6;
+}
+
+.consultation-btn:hover .btn-circle {
+    transform: rotate(-45deg);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .footer-center {
+        position: static;
+        transform: none;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 0 1.5rem 2rem;
+    }
+
+    .footer-content {
+        padding: 2rem;
+    }
+
+    .footer-center h2 {
+        font-size: 1.6rem;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-column {
+        align-items: center;
+    }
+
+    .footer-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-meta {
+        flex-direction: column;
+    }
+}
