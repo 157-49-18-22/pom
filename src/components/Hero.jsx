@@ -6,12 +6,14 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-content">
                 <div className="hero-left">
-                    <h1 className="hero-title">
-                        Digital that <br />
-                        <span>moves deeper <span className="plus">+</span></span>
-                    </h1>
-                    <div className="hero-subtext">
-                        <span>From idea to launch</span>
+                    <div className="title-wrapper">
+                        <h1 className="hero-title">
+                            Digital that
+                            <span className="hero-subtext-inline">From idea <br /> to launch</span>
+                        </h1>
+                        <h1 className="hero-title indent">
+                            moves deeper <span className="plus">+</span>
+                        </h1>
                     </div>
 
                     <div className="cta-section">
@@ -70,11 +72,11 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <div className="social-pill">
-                        <div className="social-icon">In</div>
-                        <div className="social-info">
-                            <div className="social-icon">X</div>
-                            <span>Social media</span>
+                    <div className="social-grid">
+                        <div className="social-item linkedin">In</div>
+                        <div className="social-row">
+                            <div className="social-item twitter">X</div>
+                            <div className="social-label">Social media</div>
                         </div>
                     </div>
                 </div>

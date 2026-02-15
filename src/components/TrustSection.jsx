@@ -1,19 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TrustSection.css';
 
 const TrustSection = () => {
+    const [expandedId, setExpandedId] = useState(null);
+
+    const toggleExpand = (id) => {
+        setExpandedId(expandedId === id ? null : id);
+    };
+
     const leftQuestions = [
-        'How do we start working together?',
-        'Do you work with international clients?',
-        'What if I only need one service (like a website)?',
-        'How much does a project usually cost?'
+        {
+            id: 'l1',
+            question: 'How do we start working together?',
+            answer: 'We start with a discovery call to understand your needs, followed by a proposal and kickoff meeting.'
+        },
+        {
+            id: 'l2',
+            question: 'Do you work with international clients?',
+            answer: 'Yes, we work with clients globally and are accustomed to managing different time zones.'
+        },
+        {
+            id: 'l3',
+            question: 'What if I only need one service (like a website)?',
+            answer: 'That works. We can jump in at any stage — full cycle or just design, copy, development, or strategy.'
+        },
+        {
+            id: 'l4',
+            question: 'How much does a project usually cost?',
+            answer: 'Costs vary based on scope and complexity. We provide custom quotes after our initial consultation.'
+        }
     ];
 
     const rightAnswers = [
-        'How long does a typical project take?',
-        'Do I need to have a strategy before we start?',
-        'Will I be able to edit the website after launch?',
-        'I had a rough experience before?'
+        {
+            id: 'r1',
+            question: 'How long does a typical project take?',
+            answer: 'Timelines depend on the project size, but typically range from 4-8 weeks for a standard website.'
+        },
+        {
+            id: 'r2',
+            question: 'Do I need to have a strategy before we start?',
+            answer: 'No. If you already have one — great. If not, we\'ll help shape it together before jumping into design or development.'
+        },
+        {
+            id: 'r3',
+            question: 'Will I be able to edit the website after launch?',
+            answer: 'Absolutely. We build sites that are easy for you to manage and update on your own.'
+        },
+        {
+            id: 'r4',
+            question: 'Had a rough experience before?',
+            answer: 'We prioritize clear communication and transparency to ensure a smooth and positive experience.'
+        }
     ];
 
     const testimonials = [
@@ -72,7 +110,9 @@ const TrustSection = () => {
                     <div className="top-visual-area">
                         {/* Eagle Background Image */}
                         <div className="eagle-center">
-                            <img src="/Eagle.png" alt="Trust" className="eagle-image" />
+                            <video className="eagle-image" autoPlay loop muted playsInline>
+                                <source src="/video2.webm" type="video/webm" />
+                            </video>
                         </div>
 
                         {/* Testimonial Cards Floating Around */}
@@ -98,24 +138,46 @@ const TrustSection = () => {
                     <div className="bottom-qa-area">
                         {/* Left Side - You Asked List */}
                         <div className="qa-column">
-                            {leftQuestions.map((question, index) => (
-                                <div key={index} className="qa-item">
-                                    <p>{question}</p>
-                                    <div className="qa-arrow-box">
-                                        <span className="qa-arrow">↓</span>
+                            {leftQuestions.map((item) => (
+                                <div
+                                    key={item.id}
+                                    className={`qa-item ${expandedId === item.id ? 'expanded' : ''}`}
+                                    onClick={() => toggleExpand(item.id)}
+                                >
+                                    <div className="qa-header">
+                                        <p>{item.question}</p>
+                                        <div className="qa-arrow-box">
+                                            <span className="qa-arrow">{expandedId === item.id ? '↑' : '↓'}</span>
+                                        </div>
                                     </div>
+                                    {expandedId === item.id && (
+                                        <div className="qa-answer">
+                                            <p>{item.answer}</p>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
 
                         {/* Right Side - We Answered List */}
                         <div className="qa-column">
-                            {rightAnswers.map((answer, index) => (
-                                <div key={index} className="qa-item answer-item">
-                                    <p>{answer}</p>
-                                    <div className="qa-arrow-box">
-                                        <span className="qa-arrow">↓</span>
+                            {rightAnswers.map((item) => (
+                                <div
+                                    key={item.id}
+                                    className={`qa-item ${expandedId === item.id ? 'expanded' : ''}`}
+                                    onClick={() => toggleExpand(item.id)}
+                                >
+                                    <div className="qa-header">
+                                        <p>{item.question}</p>
+                                        <div className="qa-arrow-box">
+                                            <span className="qa-arrow">{expandedId === item.id ? '↑' : '↓'}</span>
+                                        </div>
                                     </div>
+                                    {expandedId === item.id && (
+                                        <div className="qa-answer">
+                                            <p>{item.answer}</p>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>

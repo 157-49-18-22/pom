@@ -77,6 +77,10 @@ const AboutSection = () => {
                                 className={`feature-card ${hoveredCard === index ? 'expanded' : ''}`}
                                 onMouseEnter={() => setHoveredCard(index)}
                                 onMouseLeave={() => setHoveredCard(null)}
+                                onClick={() => {
+                                    setCurrentIndex(index);
+                                    setHoveredCard(index);
+                                }}
                             >
                                 <div className="card-number">{feature.number}</div>
                                 <div className="card-content">
@@ -88,6 +92,18 @@ const AboutSection = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Progress Slider */}
+                    <div className="about-progress-container">
+                        <div className="about-progress-bar">
+                            <div
+                                className="progress-fill"
+                                style={{
+                                    width: `${((currentIndex + 1) / features.length) * 100}%`
+                                }}
+                            ></div>
+                        </div>
                     </div>
                 </div>
             </div>
