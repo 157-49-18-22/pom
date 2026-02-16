@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import useScrollTransform from '../hooks/useScrollTransform';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
     const [hoveredProject, setHoveredProject] = useState(null);
+    const contentRef = useScrollTransform('left');
 
     const projects = [
         {
@@ -40,7 +42,7 @@ const ProjectsSection = () => {
 
     return (
         <section className="projects-section">
-            <div className="projects-container">
+            <div className="projects-container" ref={contentRef}>
                 <div className="projects-header">
                     <h2 className="projects-title">
                         Projects that <span className="highlight">speak<br />for themselves</span>

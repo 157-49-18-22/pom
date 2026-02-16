@@ -12,6 +12,7 @@
             rgba(75, 0, 130, 0.15) 30%,
             rgba(30, 0, 60, 0.4) 45%,
             var(--bg) 65%);
+    overflow: hidden;
 }
 
 .hero-content {

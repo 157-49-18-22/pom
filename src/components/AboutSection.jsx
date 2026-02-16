@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import useScrollTransform from '../hooks/useScrollTransform';
 import './AboutSection.css';
 
 const AboutSection = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const contentRef = useScrollTransform('right');
 
     const features = [
         {
@@ -46,7 +48,7 @@ const AboutSection = () => {
 
     return (
         <section className="about-section">
-            <div className="about-container">
+            <div className="about-container" ref={contentRef}>
                 <div className="about-left">
                     <div className="tagline">
                         <span className="star-icon">✦</span>

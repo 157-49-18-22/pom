@@ -1,10 +1,13 @@
 import React from 'react';
+import useScrollTransform from '../hooks/useScrollTransform';
 import './Hero.css';
 
 const Hero = () => {
+    const heroContentRef = useScrollTransform('left');
+
     return (
         <section className="hero">
-            <div className="hero-content">
+            <div className="hero-content" ref={heroContentRef}>
                 <div className="hero-left">
                     <div className="title-wrapper">
                         <h1 className="hero-title">

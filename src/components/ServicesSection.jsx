@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import useScrollTransform from '../hooks/useScrollTransform';
 import './ServicesSection.css';
 
 const ServicesSection = () => {
     const [hoveredService, setHoveredService] = useState(null);
+    const contentRef = useScrollTransform('left');
 
     const services = [
         {
@@ -61,7 +63,7 @@ const ServicesSection = () => {
 
     return (
         <section className="services-section">
-            <div className="services-container">
+            <div className="services-container" ref={contentRef}>
                 <div className="services-header">
                     <h2 className="services-title">
                         We choose <span className="highlight">the tools for your<br />specific goals.</span>

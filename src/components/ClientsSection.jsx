@@ -1,7 +1,9 @@
 import React from 'react';
+import useScrollTransform from '../hooks/useScrollTransform';
 import './ClientsSection.css';
 
 const ClientsSection = () => {
+    const contentRef = useScrollTransform('right');
     const clientTypes = [
         {
             number: '01',
@@ -27,7 +29,7 @@ const ClientsSection = () => {
 
     return (
         <section className="clients-section">
-            <div className="clients-container">
+            <div className="clients-container" ref={contentRef}>
                 <div className="clients-content">
                     <div className="header-label">
                         <span className="plus-icon">+</span>

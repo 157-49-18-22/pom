@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import useScrollTransform from '../hooks/useScrollTransform';
 import './TrustSection.css';
 
 const TrustSection = () => {
     const [expandedId, setExpandedId] = useState(null);
+    const contentRef = useScrollTransform('right');
 
     const toggleExpand = (id) => {
         setExpandedId(expandedId === id ? null : id);
@@ -94,7 +96,7 @@ const TrustSection = () => {
 
     return (
         <section className="trust-section">
-            <div className="trust-container">
+            <div className="trust-container" ref={contentRef}>
                 <div className="section-label">
                     <span className="plus-icon">+</span>
                     <p>Who we are and<br />why clients trust us</p>
