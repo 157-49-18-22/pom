@@ -11,12 +11,21 @@ const Hero = () => {
                 <div className="hero-left">
                     <div className="title-wrapper">
                         <h1 className="hero-title">
-                            Digital that
-                            <span className="hero-subtext-inline">From idea <br /> to launch</span>
+                            <span className="title-light">Digital</span>
+                            <span className="title-italic"> that</span>
                         </h1>
-                        <h1 className="hero-title indent">
-                            moves deeper <span className="plus">+</span>
+                        <h1 className="hero-title">
+                            <span className="title-light">moves</span>
                         </h1>
+                        <h1 className="hero-title title-last">
+                            <span className="title-italic-bold">deeper</span>
+                        </h1>
+                        <div className="hero-tag-row">
+                            <div className="hero-tag">
+                                <span className="tag-plus">+</span>
+                                <span className="tag-text">From idea to launch</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="cta-section">
@@ -30,18 +39,7 @@ const Hero = () => {
                         </p>
                     </div>
 
-                    <div className="hero-stats">
-                        <div className="stat-card">
-                            <h3>30+</h3>
-                            <p>services</p>
-                            <span>We close the cycle: from branding to development.</span>
-                        </div>
-                        <div className="stat-card">
-                            <h3>120+</h3>
-                            <p>projects</p>
-                            <span>Collaboration with clients across 15+ countries.</span>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div className="hero-center">
@@ -76,7 +74,7 @@ const Hero = () => {
                     </div>
 
                     <div className="social-grid">
-                        <div className="social-item linkedin">In</div>
+
                         <div className="social-row">
                             <div className="social-item twitter">X</div>
                             <div className="social-label">Social media</div>
@@ -85,9 +83,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="scroll-indicator">
-                <div className="arrow-down">↓</div>
-            </div>
+
         </section>
     );
 };

@@ -112,14 +112,19 @@
 }
 
 @media (max-width: 1024px) {
+    .clients-section {
+        padding: 6rem 2rem;
+    }
+
     .clients-content {
-        padding: 3.5rem 2.5rem;
+        padding: 4rem 2rem;
     }
 
     .header-label {
         position: static;
         margin-bottom: 2rem;
         text-align: left;
+        justify-content: flex-start;
     }
 
     .client-types-grid {
@@ -129,25 +134,46 @@
 
     .clients-title {
         max-width: 100%;
+        margin-bottom: 3rem;
     }
 }
 
 @media (max-width: 768px) {
+    .clients-section {
+        padding: 4rem 1.5rem;
+    }
+
     .clients-content {
-        padding: 2.5rem 1.5rem;
+        padding: 3rem 1.5rem;
         border-radius: 32px;
     }
 
     .client-number {
-        font-size: 4rem;
-        width: 80px;
+        font-size: 3.5rem;
+        width: 70px;
     }
 
     .client-info h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
-    .client-info p {
-        font-size: 0.9rem;
+    .client-type-card {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-title {
+        font-size: 2.2rem;
+    }
+
+    .client-type-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .client-number {
+        font-size: 3rem;
+        width: auto;
     }
 }

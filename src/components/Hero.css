@@ -29,7 +29,7 @@
 
 /* Left Content Adjustment */
 .hero-left {
-    padding-top: 12rem;
+    padding-bottom: 10rem;
     /* Push content down slightly */
     display: flex;
     flex-direction: column;
@@ -39,34 +39,88 @@
 .title-wrapper {
     display: flex;
     flex-direction: column;
+    overflow: visible;
+    /* Allow italic/bold text to not get clipped */
+    padding-right: 1rem;
+    /* Extra space for the italic 'deeper' tail */
 }
 
 .hero-title {
-    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
     font-weight: 300;
-    /* Regular weight */
-    line-height: .9;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin: 0;
+}
+
+/* "Digital", "moves" — thin/light weight */
+.title-light {
+    font-weight: 200;
+    color: #ffffff;
+}
+
+/* " that" — thin italic, slightly dimmed */
+.title-italic {
+    font-weight: 200;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* "deeper" — bold italic with gradient */
+.title-italic-bold {
+    font-weight: 700;
+    font-style: italic;
+    background: linear-gradient(90deg, #ff2ea6, #b024ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: -2px;
+    /* Less tight so last letter is not cut */
+    padding-right: 0.2em;
+    /* Breathing room for italic tail */
+}
+
+/* "From idea to launch" tag row */
+.hero-tag-row {
+    margin-top: 1.8rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
 }
 
-.hero-subtext-inline {
-    font-size: 0.9rem;
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    padding: 0.45rem 1rem 0.45rem 0.55rem;
+    backdrop-filter: blur(8px);
+}
+
+.tag-plus {
+    width: 22px;
+    height: 22px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.tag-text {
+    font-size: 0.82rem;
     font-weight: 400;
-    line-height: 1.2;
-    color: var(--text-dim);
-    letter-spacing: 0;
-    margin-top: 10px;
-}
-
-.hero-title .plus {
-    color: var(--primary);
-    font-weight: 300;
-    margin-left: 0.5rem;
-    vertical-align: super;
-    font-size: 0.6em;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.3px;
 }
 
 .cta-section {
@@ -222,11 +276,14 @@
 }
 
 .budget-img {
-    width: 100%;
-    height: 120px;
+    width: 82%;
+    height: 160px;
     object-fit: cover;
-    border-radius: 25px;
-    background: #f0f0f0;
+    object-position: center;
+    border-radius: 22px;
+
+    display: block;
+    margin-left: 1rem;
 }
 
 .budget-info {
@@ -244,7 +301,8 @@
 .plus-icon {
     margin: 0.5rem 0;
     font-size: 1.5rem;
-    color: #ccc;
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .budget-desc {
@@ -259,12 +317,13 @@
 }
 
 .avatar {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: #ddd;
+    background: var(--primary);
     border: 2px solid white;
-    margin-right: -8px;
+    margin-right: -10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Social Grid */
@@ -322,6 +381,141 @@
 .social-label:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero {
+        padding-top: 10rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .hero-center {
+        display: block !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-image-wrapper {
+        width: 100vw;
+        height: 100vw;
+        top: 55%;
+        left: 50%;
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 8rem 2rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3.5rem;
+        width: 100%;
+    }
+
+    .hero-left {
+        padding-bottom: 0;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .hero-title {
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(3rem, 10vw, 4.5rem);
+    }
+
+    .hero-tag-row {
+        justify-content: center;
+    }
+
+    .cta-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .hero-right {
+        align-items: center;
+        padding-right: 0;
+        gap: 2.8rem;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .info-text {
+        text-align: center;
+        font-size: 1.1rem;
+        max-width: 320px;
+    }
+
+    .main-image-wrapper {
+        top: 45%;
+        left: 50%;
+        width: 150vw;
+        height: 150vw;
+        opacity: 0.55;
+        z-index: 1;
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 7rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        letter-spacing: -1.5px;
+    }
+
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1.1rem;
+    }
+
+    .cta-hint {
+        font-size: 0.85rem;
+    }
+
+    .social-label {
+        display: none;
+    }
+
+    .budget-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .main-image-wrapper {
+        width: 200vw;
+        height: 200vw;
+        top: 42%;
+    }
 }
 
 .scroll-indicator {

@@ -193,38 +193,84 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .projects-section {
+        padding: 6rem 2rem;
+    }
+
     .projects-header {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
     }
 
     .projects-subtitle {
         position: static;
         text-align: left;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+        max-width: 100%;
     }
 
     .navigation-buttons {
         position: static;
+        margin-top: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-card {
+        aspect-ratio: 4/3;
     }
 
     .project-overlay {
         transform: translateY(0);
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
-        padding: 1.5rem;
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+        padding: 1.25rem;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
     }
 
     .project-info h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+
+    .project-stats {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 1.5rem;
+    }
+
+    .stat {
+        align-items: flex-start;
+        text-align: left;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .projects-title {
+        font-size: 2.2rem;
+    }
+
+    .project-card {
+        border-radius: 16px;
     }
 }

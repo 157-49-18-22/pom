@@ -7,6 +7,7 @@ import ClientsSection from './components/ClientsSection';
 import ProjectsSection from './components/ProjectsSection';
 import TrustSection from './components/TrustSection';
 import Footer from './components/Footer';
+import BackToTopButton from './components/BackToTopButton';
 import './index.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <ProjectsSection />
             <TrustSection />
             <Footer />
+            <BackToTopButton />
         </div>
     );
 }
